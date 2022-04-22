@@ -1,0 +1,22 @@
+@model ProdCat.Models.ProdCatViewModel
+<div class="col-6">
+    <h1>Add a New Product:</h1>
+    <br>
+    <form action="newproduct" method="post">
+        <div>
+            <label asp-for="nuProduct.ProdName"></label>
+            <span asp-validation-for="nuProduct.ProdName"></span>
+            <input type="text" asp-for="nuProduct.ProdName">
+        </div>
+        <div>
+            <label asp-for="nuProduct.Description"></label>
+            <span asp-validation-for="nuProduct.Description"></span>
+            <input type="textarea" asp-for="nuProduct.Description">
+        </div>
+            <label asp-for="nuProduct.Price"></label>
+            <span asp-validation-for="nuProduct.Price"></span>
+            <input type="number" placeholder="0.00" step="0.01" asp-for="nuProduct.Price">
+        <div>
+        <input type="submit" value="Add Product">
+    </form>
+</div>

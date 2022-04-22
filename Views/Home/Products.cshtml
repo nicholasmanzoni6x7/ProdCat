@@ -1,0 +1,17 @@
+@model List<Product>
+<div class="text-center">
+    <h1>PRODUCTS | <a href="/categories">CATEGORIES</a></h1>
+        <div>
+            <partial name="_AddProduct" model="new ProdCatViewModel {}" />
+        </div>
+    <div class="col-6">
+        <div>
+            <h2>Existing Products</h2>
+            <ul>
+                @foreach (Product p in Model)
+                {
+                    <a href="/products/@p.ProductId"><li>@p.ProdName</li></a>
+                }
+        </div>
+    </div>
+</div>

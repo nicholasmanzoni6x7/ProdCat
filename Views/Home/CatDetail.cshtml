@@ -1,0 +1,29 @@
+@model ProdCat.Models.ProdCatViewModel
+
+<h1>@Model.nuCategory.CatName</h1>
+<div class="row mt-5">
+    <div class="col-md">
+        <h2>Products: </h2>
+        <ul>
+            @foreach (Association ass in Model.nuCategory.Products)
+            {    <li>@ass.Product.ProdName</li>
+                
+            }
+        </ul>
+    </div>
+    <div class="col-md">
+        <h2>Add Products to @Model.nuCategory.CatName:</h2>
+        <form asp-action="AddProductAssociation" asp-controller="Home" method="post"
+asp-route-categoryId="@Model.nuCategory.CategoryId">
+                <select asp-for="nuAssociation.ProductId"  class="form-control">
+                @foreach (var other in @ViewBag.OtherProducts)
+                {
+                    <option value="@other.ProductId">@other.ProdName</option>
+                }
+            </select>   
+            <div class="form-group">
+                <button type="submit">Add</button>
+            </div>
+        </form>
+    </div>
+</div>

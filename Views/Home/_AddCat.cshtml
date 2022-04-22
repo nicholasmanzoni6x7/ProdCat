@@ -1,0 +1,12 @@
+@model ProdCat.Models.ProdCatViewModel
+<div>
+    <h1>Add a New Category:</h1>
+    <form action="NewCategory" method="post">
+        <div>
+            <label asp-for="nuCategory.CatName"></label>
+            <span asp-validation-for="nuCategory.CatName"></span>
+            <input type="text" asp-for="nuCategory.CatName">
+        </div>
+        <input type="submit" value="Add Category">
+    </form>
+</div>
