@@ -1,0 +1,1 @@
+This is a little web application does as an assignment for Coding Dojo. It's written with C#. You have products that you can add and then you can make categories and add the proeucts to them for sorting!
